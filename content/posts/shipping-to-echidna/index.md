@@ -41,8 +41,7 @@ shrinking: W2:4592/5000(23)
 
 Multi-worker output. Completed workers drop off automatically. Length computed on demand - no extra state. You can watch the shrinker work.
 
-> "Shoutout to @BowTiedRadone for the PR. It's great to have this extra bit of logging to prevent killing Echidna too early while debugging a broken invariant."
-> — [@rappie_eth](https://x.com/rappie_eth/status/1975646950406910315)
+> "Shoutout to @BowTiedRadone for the PR. It's great to have this extra bit of logging to prevent killing Echidna too early while debugging a broken invariant." — [@rappie_eth](https://x.com/rappie_eth/status/1975646950406910315)
 
 _Shipped in `v2.3.0`._
 

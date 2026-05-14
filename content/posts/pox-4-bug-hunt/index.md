@@ -6,7 +6,7 @@ summary = "How we used stateful property testing to uncover three hidden bugs in
 
 Good testing makes life easier - fewer bugs, smoother releases, less stress when things go live. But what counts as "good enough" testing? Honestly, it's never good enough. Especially when you're dealing with critical system infrastructure.
 
-When I worked on Stacks [Proof of Transfer](https://docs.stacks.co/concepts/stacks-101/proof-of-transfer)(PoX-4) we had to make sure the system would behave correctly not just for individual operations, but for **any sequence of operations users might throw at it**.
+When I worked on Stacks [Proof of Transfer](https://github.com/stacksgov/sips/blob/d5e6cb0cbc8d4813a2612f56194f2a09feff563f/sips/sip-007/sip-007-stacking-consensus.md)(PoX-4) we had to make sure the system would behave correctly not just for individual operations, but for **any sequence of operations users might throw at it**.
 
 To address this, we built a stateful property testing setup with:
 
