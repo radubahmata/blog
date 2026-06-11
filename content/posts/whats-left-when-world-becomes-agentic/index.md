@@ -48,9 +48,9 @@ I kept going.
 
 ---
 
-## March: Simone Joined The Effort
+## March: Simone Joined
 
-Around March, [Simone](https://github.com/orsissimo) joined this effort.
+Around March, [Simone Orsi](https://github.com/orsissimo) joined this effort.
 
 I brought the security background - years of fuzzing, stateful invariants, the muscle memory of chasing bugs that don't want to be found. He brought a terrifying passion for AI and automation. The kind that doesn't sleep.
 
@@ -70,7 +70,7 @@ The same loop, refined for six months, now carries real weight on the protocol I
 
 Caught early. Before they could ship anywhere they shouldn't.
 
-Alongside that, we built a live archive of findings - a corpus the agent (well, it's no longer _one_ agent, but that's its own series of posts coming up) reads, learns the shape of, and reuses. That archive reproduces **roughly 90% of externally reported findings** for the protocol. Not "could have, in theory." Actually duplicates them, on demand.
+Alongside that, we built a live archive of findings - a corpus the agent (well, it's no longer _one agent_, but a crazy-ass tool that deserves its own series of posts coming up) reads, learns the shape of, and reuses. The archive doubles as our de-duplication layer: when an external bounty report lands, we can prove we already had it. **Roughly 90% of incoming external reports** match something we'd already caught internally.
 
 That was the right move. Not the prompt-engineering part. The _archive_ part. The accumulated knowledge, made queryable.
 
