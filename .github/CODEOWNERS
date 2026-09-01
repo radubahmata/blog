@@ -1,10 +1,10 @@
-* @BowTiedRadone
+* @radubahmata
 
-.github/workflows/* @BowTiedRadone
+.github/workflows/* @radubahmata
 
 # Site configuration files.
-hugo.toml @BowTiedRadone
+hugo.toml @radubahmata
 
 # Layouts and themes.
-layouts/* @BowTiedRadone
-themes/* @BowTiedRadone
+layouts/* @radubahmata
+themes/* @radubahmata
