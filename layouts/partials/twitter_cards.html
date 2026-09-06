@@ -1,14 +1,21 @@
-{{- with .Params.image }}
-{{ $image := $.Resources.GetMatch . }}
-{{ with $image }}
-{{ $thumb := .Resize "400x" }}
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="{{ $thumb.Permalink }}">
-{{ end }}
-{{ end }}
+{{- $card := "summary" -}}
+{{- $imageURL := "images/portrait.png" | absURL -}}
+{{- $imageAlt := "Illustrated portrait of Radu Bahmata" -}}
+{{- with .Params.image -}}
+  {{- $image := $.Resources.GetMatch . -}}
+  {{- with $image -}}
+    {{- $thumb := .Fit "1200x630" -}}
+    {{- $card = "summary_large_image" -}}
+    {{- $imageURL = $thumb.Permalink -}}
+    {{- $imageAlt = $.Title -}}
+  {{- end -}}
+{{- end }}
+<meta name="twitter:card" content="{{ $card }}" />
+<meta name="twitter:image" content="{{ $imageURL }}" />
+<meta name="twitter:image:alt" content="{{ $imageAlt }}" />
 
 <meta name="twitter:title" content="{{ .Title }}"/>
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Params.summary }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
 {{ with .Site.Params.Social.twitter -}}
 <meta name="twitter:site" content="@{{ . }}"/>
 {{ end -}}
