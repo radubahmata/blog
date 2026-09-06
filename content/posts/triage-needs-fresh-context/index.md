@@ -1,5 +1,5 @@
 +++
-title = "Researchers Should Not Triage Their Own Findings"
+title = "Triage Needs Fresh Context"
 date = "2026-09-06T00:03:00Z"
 summary = "Why security findings need a fresh context with the opposite mandate."
 series_key = "Industrializing Security Research"

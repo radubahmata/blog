@@ -1,5 +1,5 @@
 +++
-title = "Flagship Swarms Coordinate Tasks, Not Research Identities"
+title = "Task Swarms Blur Roles"
 date = "2026-09-06T00:02:00Z"
 summary = "Why leader-centric agent swarms do not preserve distinct security-research techniques."
 series_key = "Industrializing Security Research"

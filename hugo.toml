@@ -14,10 +14,6 @@ github = "radubahmata"
 email = "bowtiedradone@gmail.com"
 
 [[params.navlinks]]
-name = "about/"
-url = "about/"
-
-[[params.navlinks]]
 name = "posts/"
 url = "posts/"
 

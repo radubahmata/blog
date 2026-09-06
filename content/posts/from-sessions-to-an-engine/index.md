@@ -1,5 +1,5 @@
 +++
-title = "From Interactive Sessions to Continuous Security Research"
+title = "From Agentic Sessions to an Engine"
 date = "2026-09-12"
 summary = "How isolated coding agents, Git coordination, and separate post-processing became an execution engine for continuous security research."
 series_key = "Industrializing Security Research"
@@ -11,8 +11,8 @@ _Part 4 of [Industrializing Security Research](/posts/industrializing-security-r
 The earlier parts established three constraints:
 
 - [Research roles should repeat a technique](/posts/one-context-is-not-a-security-team/#repeatability-means-repeating-the-technique).
-- [Coordination should not rewrite those roles](/posts/flagship-swarms-coordinate-tasks/#task-coordination-is-not-technique-isolation).
-- [Triage should start from a fresh context](/posts/researchers-should-not-triage-their-own-findings/#post-processing-must-be-separate-by-design).
+- [Coordination should not rewrite those roles](/posts/task-swarms-blur-roles/#task-coordination-is-not-technique-isolation).
+- [Triage should start from a fresh context](/posts/triage-needs-fresh-context/#post-processing-must-be-separate-by-design).
 
 This post covers the execution engine I used to make those constraints concrete.
 
@@ -40,7 +40,7 @@ The skills suite had exposed the first constraints. Sustained operation exposed 
 
 ## Agents Coordinate Through Git, Not a Leader
 
-[`claude-swarm`](https://github.com/protocol-security/claude-swarm) removes the coordinator from [the leader-and-workers topology described in Part 2](/posts/flagship-swarms-coordinate-tasks/#flagship-swarms-keep-a-main-thread). It runs coding agents in isolated Docker containers. The host creates a bare Git repository from the project. Every agent gets its own workspace, but all of them push to the shared repository.
+[`claude-swarm`](https://github.com/protocol-security/claude-swarm) removes the coordinator from [the leader-and-workers topology described in Part 2](/posts/task-swarms-blur-roles/#flagship-swarms-keep-a-main-thread). It runs coding agents in isolated Docker containers. The host creates a bare Git repository from the project. Every agent gets its own workspace, but all of them push to the shared repository.
 
 Each agent then runs a simple loop:
 
@@ -51,7 +51,7 @@ Each agent then runs a simple loop:
 
 When one agent publishes useful work, the others see it on a later iteration. They can extend it, challenge it, or avoid repeating it. If two agents collide, Git makes the conflict visible instead of silently choosing a winner.
 
-The tool also implements [the research-and-triage boundary from Part 3](/posts/researchers-should-not-triage-their-own-findings/#post-processing-must-be-separate-by-design). [Post-processing runs as a separate agent and context by design](https://github.com/protocol-security/claude-swarm/blob/e3637afb9a4deb2d6c932fc3852fa98b1f17e79f/USAGE.md#post-processing). It receives committed research, not the researchers' accumulated conversations. The host then harvests the agent branches back into the project.
+The tool also implements [the research-and-triage boundary from Part 3](/posts/triage-needs-fresh-context/#post-processing-must-be-separate-by-design). [Post-processing runs as a separate agent and context by design](https://github.com/protocol-security/claude-swarm/blob/e3637afb9a4deb2d6c932fc3852fa98b1f17e79f/USAGE.md#post-processing). It receives committed research, not the researchers' accumulated conversations. The host then harvests the agent branches back into the project.
 
 The agents do not need to remember previous sessions. The durable memory is the Git history.
 
@@ -105,7 +105,7 @@ In roughly six months, my deployment crossed:
 - More than 1,600 attributable commits
 - More than 600 raw candidate reports across Stacks Core, sBTC, and Leather
 
-Almost every candidate went through separate post-processing. A candidate report is not a vulnerability. Many are duplicates, weak claims, invalid threat models, or real defects with overstated impact. [Independent triage matters more as raw output grows](/posts/researchers-should-not-triage-their-own-findings/#triage-needs-the-opposite-mandate).
+Almost every candidate went through separate post-processing. A candidate report is not a vulnerability. Many are duplicates, weak claims, invalid threat models, or real defects with overstated impact. [Independent triage matters more as raw output grows](/posts/triage-needs-fresh-context/#triage-needs-the-opposite-mandate).
 
 These are not quality metrics or a benchmark. They show the industrialization level: research running repeatedly across targets, producing enough material that session-by-session handling no longer works.
 
