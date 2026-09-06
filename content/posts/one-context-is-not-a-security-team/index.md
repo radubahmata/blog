@@ -1,6 +1,6 @@
 +++
 title = "One Context Is Not a Security Team"
-date = "2026-09-06T12:00:00+03:00"
+date = "2026-09-06T00:01:00Z"
 summary = "Why a broad suite of security skills makes focused research hard to repeat."
 series_key = "Industrializing Security Research"
 series_part = 1

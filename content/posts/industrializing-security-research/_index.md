@@ -1,6 +1,6 @@
 +++
 title = "Industrializing Security Research"
-date = "2026-09-06T00:00:00+03:00"
+date = "2026-09-06T00:00:00Z"
 layout = "series"
 summary = "A series about making agentic security research repeatable across roles, runs, and targets."
 series_key = "Industrializing Security Research"
