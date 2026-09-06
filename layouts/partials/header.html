@@ -1,1 +1,48 @@
-<!-- Keep - override to add code to <header /> tag -->
+<style>
+.posts-list .mobile-date {
+    display: none;
+}
+
+.posts-list .series-post-date {
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.posts-list .post-heading h1::after,
+.posts-list .post-heading h2::after {
+    display: none;
+}
+
+@media only screen and (max-width: 850px) {
+    .posts-list .post-heading {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .posts-list .post-heading h1,
+    .posts-list .post-heading h2 {
+        order: 1;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .posts-list .post-heading .date {
+        order: 2;
+        display: block;
+        position: static;
+        width: auto;
+        z-index: auto;
+        margin-bottom: 5px;
+        color: var(--secondary-color);
+        font-weight: 400;
+    }
+
+    .posts-list .mobile-date {
+        display: inline;
+    }
+
+    .posts-list .series-post-date {
+        display: none;
+    }
+}
+</style>

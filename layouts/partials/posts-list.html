@@ -22,7 +22,7 @@
     {{ range $entries }}
         {{ $page := .page }}
         <div class="post">
-            <p>
+            <div class="post-heading">
                 <div class="date">
                     {{ .date | time.Format ":date_medium" }}
                 </div>
@@ -31,8 +31,8 @@
                         {{ $page.Title }}
                     </a>
                 </h1>
-                {{ with $page.Params.summary }}{{ . }}{{ else }}{{ $page.Summary }}{{ end }}
-            </p>
+            </div>
+            {{ with $page.Params.summary }}<p>{{ . }}</p>{{ else }}{{ $page.Summary }}{{ end }}
         </div>
     {{ end }}
 </div>
