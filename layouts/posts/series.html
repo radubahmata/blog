@@ -2,8 +2,7 @@
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 
-<h2>Posts</h2>
-<hr>
+<h1>Posts</h1>
 {{ $series := .Params.series_key }}
 {{ $posts := where .Site.RegularPages "Params.series_key" $series }}
 {{ if $posts }}
@@ -11,8 +10,13 @@
     {{ range $index, $post := sort $posts "Params.series_part" "asc" }}
         {{ if $index }}<hr>{{ end }}
         <div class="post">
-            <div class="date">Part {{ .Params.series_part }}</div>
-            <h2><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+            <div class="post-heading">
+                <div class="date">
+                    Part {{ .Params.series_part }}<span class="mobile-date"> · {{ .Date | time.Format ":date_medium" }}</span>
+                </div>
+                <h2><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+                <div class="series-post-date">{{ .Date | time.Format ":date_medium" }}</div>
+            </div>
             {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
         </div>
     {{ end }}
