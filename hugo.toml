@@ -2,6 +2,8 @@ baseurl = "https://radubahmata.com"
 title = "radubahmata"
 theme = "hugo-theme-console"
 languageCode = "en-us"
+timeZone = "Etc/UTC"
+buildFuture = false
 
 [params]
 animateStyle = "animated zoomIn fast"
