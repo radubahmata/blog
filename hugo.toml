@@ -18,3 +18,7 @@ url = "about/"
 [[params.navlinks]]
 name = "posts/"
 url = "posts/"
+
+[[params.navlinks]]
+name = "series/"
+url = "series/"
