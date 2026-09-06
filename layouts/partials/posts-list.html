@@ -1,0 +1,38 @@
+{{ $entries := slice }}
+{{ $useChildDates := default false .useChildDates }}
+
+{{ range .pages }}
+    {{ $page := . }}
+    {{ $date := .Date }}
+    {{ if $useChildDates }}
+        {{ $children := sort (where site.RegularPages "Params.series_key" .Params.series_key) "Date" "desc" }}
+        {{ with $children }}
+            {{ $date = (index . 0).Date }}
+        {{ end }}
+    {{ end }}
+    {{ $entries = $entries | append (dict "date" $date "page" $page) }}
+{{ end }}
+
+{{ $entries = sort $entries "date" "desc" }}
+{{ with .limit }}
+    {{ $entries = first . $entries }}
+{{ end }}
+
+<div class="posts-list">
+    {{ range $entries }}
+        {{ $page := .page }}
+        <div class="post">
+            <p>
+                <div class="date">
+                    {{ .date | time.Format ":date_medium" }}
+                </div>
+                <h1>
+                    <a href="{{ $page.Permalink }}" title="{{ $page.Title }}">
+                        {{ $page.Title }}
+                    </a>
+                </h1>
+                {{ with $page.Params.summary }}{{ . }}{{ else }}{{ $page.Summary }}{{ end }}
+            </p>
+        </div>
+    {{ end }}
+</div>

@@ -1,0 +1,6 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ $seriesPages := where .Site.Pages "Params.series_parent" true }}
+{{ partial "posts-list.html" (dict "pages" $seriesPages "useChildDates" true) }}
+{{ end }}
