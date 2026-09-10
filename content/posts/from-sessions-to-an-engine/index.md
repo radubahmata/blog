@@ -1,6 +1,6 @@
 +++
 title = "From Agentic Sessions to an Engine"
-date = "2026-09-12"
+date = "2026-09-10"
 summary = "How isolated coding agents, Git coordination, and separate post-processing became an execution engine for continuous security research."
 series_key = "Industrializing Security Research"
 series_part = 4
